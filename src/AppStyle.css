@@ -115,6 +115,10 @@ input {
   margin-left: 4px; 
 }
 
+.value-key {
+  font-weight: 600;
+}
+
 .input-duo {
   margin-bottom: 22px;
 }
@@ -179,7 +183,8 @@ input {
 
 .client-name {
   margin-bottom: 38px;
-  font-size: 27px;
+  font-size: 26px;
+  font-weight: 500;
 }
 
 .add-btn, .delete-btn, .edit-btn {
@@ -197,6 +202,26 @@ input {
 .selected {
   padding-bottom: 9px;
   border-bottom: 1px solid #bebebe;
+}
+
+.message-card-group {
+
+}
+
+.message-card {
+
+}
+
+.message-info-display {
+
+}
+
+.message-name {
+
+}
+
+.message-email {
+  
 }
 
 /* body {

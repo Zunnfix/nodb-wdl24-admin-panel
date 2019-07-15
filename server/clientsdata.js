@@ -1,5 +1,6 @@
-const clients = [{
-  id: 71,
+const clients = [
+{
+  id: 1,
   firstName: 'David',
   lastName: 'Drummond',
   email: 'drummond31@gmail.com',
@@ -7,7 +8,7 @@ const clients = [{
   title: 'CLO'
 },
 {
-  id: 22,
+  id: 2,
   firstName: 'Elon',
   lastName: 'Musk',
   email: 'musk.elon32@tesla.com',
@@ -15,7 +16,7 @@ const clients = [{
   title: 'CEO'
 },
 {
-  id: 77,
+  id: 3,
   firstName: 'Arthur',
   lastName: 'Levinson',
   email: 'a.levinson@apple.com',
@@ -23,7 +24,7 @@ const clients = [{
   title: 'Chairman'
 },
 {
-  id: 23,
+  id: 4,
   firstName: 'Satya',
   lastName: 'Nadella',
   email: 's.nadella@hotmail.com',
@@ -31,7 +32,7 @@ const clients = [{
   title: 'CEO'
 },
 {
-  id: 59,
+  id: 5,
   firstName: 'Nelson',
   lastName: 'Chai',
   email: 'nelsonchai@yahoo.com',
@@ -39,7 +40,7 @@ const clients = [{
   title: 'CFO'
 },
 {
-  id: 17,
+  id: 6,
   firstName: 'Daniel',
   lastName: 'Pinto',
   email: 'danpinto@gmail.com',
@@ -47,13 +48,53 @@ const clients = [{
   title: 'Co-President'
 },
 {
-  id: 62,
+  id: 7,
   firstName: 'Jason',
   lastName: 'Furlong',
   email: 'j.furlong@hotmail.com',
   business: 'Southwest Airlines',
   title: 'Business Analyst'
 },
+{
+  id: 8,
+  firstName: "Venita",
+  lastName: "Jansema",
+  email: "vjansema7@go.com",
+  business: "Energy MLP Fund Inc.",
+  title: "Associate Professor"
+}, 
+{
+  id: 9,
+  firstName: "Thedrick",
+  lastName: "Skyrme",
+  email: "tskyrme8@unesco.org",
+  business: "Encana Corporation",
+  title: "Registered Nurse"
+}, 
+{
+  id: 10,
+  firstName: "Pincas",
+  lastName: "Ondrusek",
+  email: "pondrusek9@webster.com",
+  business: "Lehman ABS Corporation",
+  title: "Civil Engineer"
+}, 
+{
+  id: 11,
+  firstName: "Ginevra",
+  lastName: "Mugleston",
+  email: "gmuglestona@fastco.com",
+  business: "CYS Investments, Inc.",
+  title: "Systems Administrator III"
+}, 
+{
+  id: 12,
+  firstName: "Burk",
+  lastName: "Gilders",
+  email: "bgildersb@timesonline.co.uk",
+  business: "Global X Health & Wellness ETF",
+  title: "Occupational Therapist"
+}
 ]
 
 module.exports = clients;

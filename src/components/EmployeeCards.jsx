@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import EmployeeCardGroup from './EmployeeCardGroup'
 import axios from 'axios';
 
-export default class EmployeeCard extends Component {
+export default class EmployeeCards extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,9 +14,15 @@ export default class EmployeeCard extends Component {
   componentDidMount() {
     axios.get("/api/employees")
       .then(response => {
-        console.log(response)
+        // console.log(response)
         this.setState({ employees: response.data })
       })
+      .catch(error => console.log(error))
+  }
+
+  deleteEmployee = (id) => {
+    axios.delete(`/api/employees/${id}`)
+      .then(res => this.setState({ employees: res.data })) // data is whatever you send it to be w/ .send(DATAFILE) in you controller function
       .catch(error => console.log(error))
   }
 
@@ -41,7 +47,7 @@ export default class EmployeeCard extends Component {
           <div className='total'>Total: {this.state.employees.length}</div>
         </div>
         <div className='card-group'>
-          <EmployeeCardGroup employees={this.state.employees} />
+          <EmployeeCardGroup employees={this.state.employees} deleteEmployee={this.deleteEmployee} />
         </div>
       </div>
     );
