@@ -40,7 +40,7 @@ export default class EmployeeCards extends Component {
             <div className='input-duo'>Business: <input className='input-section' type="text" id="" /></div>
             <div className='input-duo'>Title: <input className='input-section' type="text" id="" /></div>
           </form>
-          <button className='add-btn'>Add Client</button>
+          <button className='add-btn'>Add Employee</button>
         </div>
         <div className='label-total'>
           <div className='label'>Employees: </div>
