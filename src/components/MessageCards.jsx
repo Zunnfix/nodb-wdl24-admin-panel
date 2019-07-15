@@ -36,7 +36,7 @@ export default class MessageCards extends Component {
         </div>
         <div className='message-card-group'>
           <MessageCardGroup
-            deleteClient={this.deleteMessage}
+            deleteMessage={this.deleteMessage}
             messages={messages} />
         </div>
       </div>

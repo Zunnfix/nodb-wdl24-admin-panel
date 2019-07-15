@@ -14,7 +14,7 @@ export default class MessageCardGroup extends Component {
             <div className='message-display'>
               <div className='message'>{message}</div>
             </div>
-            <button className='message-delete-btn' onClick={() => this.deleteMessage(id)}>Delete</button>
+            <button className='message-delete-btn' onClick={() => this.props.deleteMessage(id)}>Delete</button>
           </div>
         </div>
       )
