@@ -1,6 +1,8 @@
-const clients = require('../clientsdata');
-const employees = require('../employeesdata');
+const clients = require('../clientsdata')
+const employees = require('../employeesdata')
 const messages = require('../messagesdata')
+
+let id = 13
 
 const getClients = (req, res) => {
   res.json(clients)
@@ -48,13 +50,34 @@ const deleteMessages = (req, res) => {
 }
 
 const addClient = (req, res) => {
-  const { id, firstName, lastName, email, business, title } = req.body;
+  const { firstName, lastName, email, business, title } = req.body
   if (!firstName || !lastName) {
-    return res.status(417).json("First and last name are required.");
+    return res.status(417).json("First and last name are required.")
   }
-  clients.push({ id, firstName, lastName, email, business, title });
-  res.json(clients);
-};                     /// This will be needed to add to the current list of clients ///
+  clients.unshift({ id, firstName, lastName, email, business, title })
+  id++
+  res.json(clients)
+};    
+
+const addEmployee = (req, res) => {
+  const { firstName, lastName, email, location, jobTitle } = req.body
+  if (!firstName || !lastName) {
+    return res.status(417).json("First and last name are required.")
+  }
+  employees.unshift({ id, firstName, lastName, email, location, jobTitle })
+  id++
+  res.json(employees)
+};    
+
+const addMessage = (req, res) => {
+  const { firstName, lastName, email, message } = req.body
+  if (!firstName || !lastName || !email) {
+    return res.status(417).json("Full name and email are required.")
+  }
+  messages.push({ id, firstName, lastName, email, message })
+  id++
+  res.json(messages)
+}
 
 // app.put()
 
@@ -63,7 +86,9 @@ module.exports = {
   addClient,
   deleteClient,
   getEmployees,
+  addEmployee,
   deleteEmployee,
   getMessages,
+  addMessage,
   deleteMessages
 }

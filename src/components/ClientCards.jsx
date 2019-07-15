@@ -8,7 +8,6 @@ export default class ClientCards extends Component {
     this.state = {
       clients: [],
       error: '',
-      id: null,
       firstName: '',
       lastName: '',
       email: '',
@@ -39,22 +38,21 @@ export default class ClientCards extends Component {
       .catch(error => console.log(error))
   }
 
-  onSubmit = () => {
-    const { firstName, lastName, email, business, title, clients } = this.state
+  onSubmit = (e) => {
+    e.preventDefault()
+    const { firstName, lastName, email, business, title } = this.state
     axios
-      .post("/api/clients", {
-        id: clients.length + 1,
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        business: business,
-        title: title,
+      .post( "/api/clients", {
+        firstName,
+        lastName,
+        email,
+        business,
+        title
       })
-      .then(() => {
-        this.props.changeView("clients");
+      .then( (response) => {
+        this.setState({ clients: response.data })
       })
-      .catch(error => {
-        console.log(error);
+      .catch( () => {
         this.setState({
           error: "An error occurred, please try again."
         });
@@ -69,7 +67,7 @@ export default class ClientCards extends Component {
   }
 
   render() {
-    const { id, firstName, lastName, email, business, title, clients } = this.state
+    const { firstName, lastName, email, business, title, clients } = this.state
     const { handleInputChange } = this
     return (
       <div className='all-cards'>
