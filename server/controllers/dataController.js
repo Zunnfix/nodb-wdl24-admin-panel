@@ -36,6 +36,17 @@ const deleteEmployee = (req, res) => {
   res.status(200).send(employees)
 }
 
+const deleteMessages = (req, res) => {
+  const { id } = req.params
+  let index = messages.findIndex(messages => {
+    // console.log(client.id, id);
+    return messages.id == id
+  })
+  // console.log(index);
+  messages.splice(index, 1)
+  res.status(200).send(messages)
+}
+
 const addClient = (req, res) => {
   const { id, firstName, lastName, email, business, title } = req.body;
   if (!firstName || !lastName) {
@@ -49,9 +60,10 @@ const addClient = (req, res) => {
 
 module.exports = {
   getClients,
-  getEmployees,
   addClient,
   deleteClient,
+  getEmployees,
   deleteEmployee,
-  getMessages
+  getMessages,
+  deleteMessages
 }

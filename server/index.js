@@ -10,6 +10,7 @@ app.get("/api/employees/", dataController.getEmployees)
 app.get("/api/messages/", dataController.getMessages)
 app.delete("/api/clients/:id", dataController.deleteClient)
 app.delete("/api/employees/:id", dataController.deleteEmployee)
+app.delete("/api/messages/:id", dataController.deleteMessages)
 app.post("/api/clients/", dataController.addClient)
 
 const PORT = 4242;

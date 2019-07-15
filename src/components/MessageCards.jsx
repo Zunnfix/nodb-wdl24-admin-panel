@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import MessageCardGroup from './MessageCardGroup';
 
 export default class MessageCards extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       messages: []
     };
@@ -26,28 +27,18 @@ export default class MessageCards extends Component {
   }
 
   render() {
-      let viewCards = this.state.messages.map(note => {
-        const { id, firstName, lastName, email, message } = note
-        return (
-          <div className='card=container'>
-            <div className='client-card-group' key={id}>
-              <div className='client-card'>
-                <div className='message-info-display'>
-                  <div className='message-name'><span className='value-key'>Name: </span>{firstName} {lastName}</div>
-                  <div className='message-email'><span className='value-key'>Email: </span>{email}</div>
-                </div>
-                <div className='message-display'>
-                  <div className='message'><span className='value-key'>Message: </span>{message}</div>
-                </div>
-                <button className='delete-btn' onClick={() => this.deleteMessage(id)}>Delete</button>
-              </div>
-            </div>
-          </div>
-        )
-      })
+    const { messages } = this.state
     return (
-      <div>
-        {viewCards}
+      <div className='info-card-group'>
+        <div className='label-total'>
+          <div className='label'>Messages: </div>
+          <div className='total'>Total: {messages.length}</div>
+        </div>
+        <div className='message-card-group'>
+          <MessageCardGroup
+            deleteClient={this.deleteMessage}
+            messages={messages} />
+        </div>
       </div>
     )
   }

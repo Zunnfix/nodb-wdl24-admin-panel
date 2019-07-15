@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ClientCardGroup from './ClientCardGroup'
 import axios from 'axios';
+import ClientCardGroup from './ClientCardGroup'
 
 export default class ClientCards extends Component {
   constructor() {
@@ -39,6 +39,28 @@ export default class ClientCards extends Component {
       .catch(error => console.log(error))
   }
 
+  onSubmit = () => {
+    const { firstName, lastName, email, business, title, clients } = this.state
+    axios
+      .post("/api/clients", {
+        id: clients.length + 1,
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        business: business,
+        title: title,
+      })
+      .then(() => {
+        this.props.changeView("clients");
+      })
+      .catch(error => {
+        console.log(error);
+        this.setState({
+          error: "An error occurred, please try again."
+        });
+      });
+  }
+
   handleInputChange(e) {
     const { name, value } = e.target
 
@@ -51,71 +73,24 @@ export default class ClientCards extends Component {
     const { handleInputChange } = this
     return (
       <div className='all-cards'>
-        <form className='client-add-card'
-              onSubmit={ () => {
-                  axios
-                    .post("/api/clients", {
-                      id: clients.length + 1,
-                      firstName: firstName,
-                      lastName: lastName,
-                      email: email,
-                      business: business,
-                      title: title,
-                    })
-                    .then( () => {
-                      this.props.changeView("clients");
-                    })
-                    .catch( error => {
-                      console.log(error);
-                      this.setState({
-                        error: "An error occurred, please try again."
-                      });
-                    });
-                }
-              }
-          >
+        <form className='client-add-card' onSubmit={this.onSubmit}>
           <div className='client-add-form-group1'>
             <div className='input-duo'>First name:&nbsp;
-              <input
-                name='firstName'
-                className='input-section'
-                onChange={handleInputChange}
-                value={firstName}
-              />
+              <input name='firstName' className='input-section' onChange={handleInputChange} value={firstName} />
             </div>
             <div className='input-duo'>Last name:&nbsp;
-              <input
-                name='lastName'
-                className='input-section'
-                onChange={handleInputChange}
-                value={lastName}
-              />
+              <input name='lastName' className='input-section' onChange={handleInputChange} value={lastName} />
             </div>
             <div className='input-duo'>Email:&nbsp;
-              <input
-                name='email'
-                className='input-section'
-                onChange={handleInputChange}
-                value={email}
-              />
+              <input name='email' className='input-section' onChange={handleInputChange} value={email} />
             </div>
           </div>
           <div className='client-add-form-group2'>
             <div className='input-duo'>Business:&nbsp;
-              <input
-                name='business'
-                className='input-section'
-                onChange={handleInputChange}
-                value={business}
-              />
+              <input name='business' className='input-section' onChange={handleInputChange} value={business} />
             </div>
             <div className='input-duo'>Title:&nbsp;
-              <input
-                name='title'
-                className='input-section'
-                onChange={handleInputChange}
-                value={title}
-              />
+              <input name='title' className='input-section' onChange={handleInputChange} value={title} />
             </div>
           </div>
           <input value='Add Client' type='submit' className='add-btn' />
@@ -125,9 +100,11 @@ export default class ClientCards extends Component {
           <div className='total'>Total: {clients.length}</div>
         </div>
         <div className='card-group'>
-          <ClientCardGroup
-            deleteClient={this.deleteClient}
-            clients={clients} />
+          <div className='client-card-group'>
+            <ClientCardGroup
+              deleteClient={this.deleteClient}
+              clients={clients} />
+          </div>
         </div>
       </div>
     );

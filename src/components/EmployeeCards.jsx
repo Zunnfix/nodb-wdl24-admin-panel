@@ -3,8 +3,8 @@ import EmployeeCardGroup from './EmployeeCardGroup'
 import axios from 'axios';
 
 export default class EmployeeCards extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       employees: []
     };
@@ -47,7 +47,9 @@ export default class EmployeeCards extends Component {
           <div className='total'>Total: {this.state.employees.length}</div>
         </div>
         <div className='card-group'>
-          <EmployeeCardGroup employees={this.state.employees} deleteEmployee={this.deleteEmployee} />
+          <div className='client-card-group'>
+            <EmployeeCardGroup employees={this.state.employees} deleteEmployee={this.deleteEmployee} />
+          </div>
         </div>
       </div>
     );

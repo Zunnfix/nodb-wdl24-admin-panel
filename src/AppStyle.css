@@ -90,19 +90,20 @@ nav {
   flex-direction: column;
   overflow: scroll;
   overflow-x: hidden;
-  height: 56.8vh;
+  height: 54.6vh;
 }
 
-.client-card, .client-add-card {
+.client-card, .client-add-card, .message-card {
   position: relative;
   display: flex;
   background-color: #fff;
-  height: 210px;
+  min-height: 210px;
   width: 800px;
   -webkit-box-sizing: border-box; 
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 36px 32px;
+  padding: 36px 34px ;
+  margin-bottom: 26px;
   box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.15);
 }
 
@@ -158,10 +159,6 @@ input {
   display: flex; 
 }
 
-.client-card {
-  margin-bottom: 26px;
-}
-
 .client-display-group1, .client-display-group2 {
   display: flex;
   flex-direction: column;
@@ -191,12 +188,12 @@ input {
   font-size: 16.5px;
   position: absolute;
   padding: 6px 30px;
-  bottom: 24px;
-  right: 26px;
+  bottom: 17px;
+  right: 17px;
 }
 
 .edit-btn {
-  right: 154px;
+  right: 150px;
 }
 
 .selected {
@@ -205,19 +202,43 @@ input {
 }
 
 .message-card-group {
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 82.5vh;
+  width: 820px;
+}
 
+.info-card-group {
+  margin-top: 50px;
 }
 
 .message-card {
-
+  padding: 34px;
 }
 
 .message-info-display {
+  min-width: 280px;
+}
 
+.message-display {
+  font-size: 16px;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 128px;
+  resize: vertical;
+}
+
+.message-delete-btn {
+  font-size: 16.5px;
+  position: absolute;
+  padding: 6px 28px;
+  bottom: 26px;
+  left: 36px;
 }
 
 .message-name {
-
+  margin-bottom: 10px;
 }
 
 .message-email {

@@ -18,14 +18,14 @@ const messages = [
     firstName: 'Rachel',
     lastName: 'Sanchez',
     email: 'drummond31@gmail.com',
-    message: 'Fugit a incidunt enim blanditiis facere sunt rerum labore, ea quidem nam quisquam quod reprehenderit nihil harum ipsa.'
+    message: 'Fugit a incidunt enim blanditiis facere sunt rerum labore, ea quidem nam quisquam sapiente enim sit minus impedit sapiente quod reprehenderit nihil harum ipsa.'
   },
   {
     id: 4,
     firstName: 'Louis',
     lastName: 'Droufort',
     email: 'droufort-man@jpm.com',
-    message: 'Optio fugiat cum illo laudantium totam obcaecati eius magni cumque iusto, aperiam sit minus impedit sapiente consequatur tenetur magnam iste sit dolores autem voluptatem laborum recusandae dolorem.'
+    message: 'Optio fugiat cum illo laudantium totam obcaecati eius magni cumque iusto, Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi. amet iste quidem nam quisquam sit dolores autem voluptatem laborum recusandae dolorem reprehenderit? aperiam sapiente enim sit minus impedit sapiente consequatur tenetur magnam iste facere sunt rerum labore sit dolores autem voluptatem laborum recusandae dolorem. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat.'
   },
   {
     id: 5,
