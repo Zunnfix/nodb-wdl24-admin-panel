@@ -26,19 +26,44 @@ export default class App extends Component {
         <header>
           <div className='logo'>Company Inc.</div>
           <div className='btn-group'>
-            <div className='header-btn'>
-              <i class="far fa-bell"></i>
+            <div className='btn-group'>
+              <div className='button dropdown-toggle mr-4' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div className='header-btn'>
+                  <i class="far fa-bell"></i>
+                </div>
+              </div>
+              <div className="dropdown-menu custom-menu dropdown-menu-right">
+                <div className="dropdown-item custom-item">
+                  <div className='icon-bubble'><i className="fas fa-chart-line"></i></div>
+                  <div className='text-group'>
+                    <div className='item-title'>Analytics</div>
+                    <div className='dropdown-text'>Your website’s active users count increased by <span className='text-success'>28%</span>.</div>
+                  </div>
+                </div>
+                <div className="dropdown-divider"></div>
+                <div className="dropdown-item custom-item">
+                  <div className='icon-bubble'><i className="fas fa-dollar-sign"></i></div>
+                  <div className='text-group'>
+                    <div className='item-title'>Sales</div>
+                    <div className='dropdown-text'>Last week your store’s sales count decreased by <span className='text-danger'>5.2%</span>.</div>
+                  </div>
+                </div>
+                <div className="dropdown-divider"></div>
+                <a className="dropdown-item custom-item2"><div>View all Notifications</div></a>
+              </div>
             </div>
-            <div className='profile-group button dropdown-toggle' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img className='profile' src={profile} alt="" />
-              <div className='profile-name'>Trevor</div>
-            </div>
-            <div class="dropdown-menu dropdown-menu-right">
-              <a class="dropdown-item" href="#"><i class="far fa-user"></i> Profile</a>
-              <a class="dropdown-item" href="#"><i class="far fa-file-alt"></i> Blog Posts</a>
-              <a class="dropdown-item" href="#"><i class="far fa-file"></i> Add New Post</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#"><span className='text-danger'><i class="fas fa-sign-out-alt"></i> Logout</span></a>
+            <div className='btn-group a-btn-group'>
+              <div className='profile-group dropdown-toggle button' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img className='profile' src={profile} alt="" />
+                <div className='profile-name'>Trevor</div>
+              </div>
+              <div className="dropdown-menu dropdown-menu-right">
+                <a className="dropdown-item"><i className="far fa-user"></i> Profile</a>
+                <a className="dropdown-item"><i className="far fa-file-alt"></i> Blog Posts</a>
+                <a className="dropdown-item"><i className="far fa-file"></i> Add New Post</a>
+                <div className="dropdown-divider"></div>
+                <a className="dropdown-item"><span className='text-danger'><i className="fas fa-sign-out-alt"></i> Logout</span></a>
+              </div>
             </div>
           </div>
         </header>

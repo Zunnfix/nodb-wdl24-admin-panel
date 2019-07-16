@@ -21,12 +21,98 @@ header {
   height: 9vh;
 }
 
-.far {
-  margin-right: 4px;
+.fas {
+  font-size: 18px;
+}
+
+.dropdown-divider {
+  margin: 0;
 }
 
 .dropdown-menu {
   margin-top: -0.5rem;
+  transform: translate3d(-397px, 55px, 0px);
+  padding: 0;
+}
+
+.dropdown-menu.custom-menu {
+  margin-top: -0.5rem;
+  transform: translate3d(-397px, 55px, 0px);
+  padding: 0;
+}
+
+.btn-group1 {
+  display: flex;
+  justify-content: start;
+}
+
+.dropdown-item {
+  cursor: pointer;
+  width: 170px;
+  padding: .7rem 1.8rem;
+}
+
+/* .custom-item.dropdown-item:active {
+  color: #c5af31;
+} */
+
+.icon-bubble {
+  color: #747474;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  min-height: 38px;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: #f5f5f5;
+  box-shadow: inset 0 0 4px #bebebe;
+}
+
+.text-group {
+  margin-left: 10px;
+  color: rgb(94, 94, 94);
+}
+
+.item-title {
+  color: #707e92;
+  font-weight: 600;
+}
+
+.dropdown-text {
+  width: 290px;
+  overflow:hidden;
+  word-wrap:break-word;
+}
+
+.custom-item.dropdown-item {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 364px;
+  height: 70px;
+  padding: .4rem 1rem;
+}
+
+.custom-item2 {
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 364px;
+}
+
+
+.dropdown-toggle {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.dropdown-toggle::after {
+  display:none;
 }
 
 .logo {
@@ -36,24 +122,28 @@ header {
   line-height: 12px;
 }
 
-.btn-group {
+.a-btn-group {
   display: flex;
-  width: 190px;
+  width: 142px;
   justify-content: space-between;
   align-items: center;
 }
 
 .header-btn {
-  font-size: 20px;
-  width: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  font-size: 21px;
+  padding: 10px;
+  width: 40px;
+  background-color: #fff;
+  border-radius: 37px;
   text-align: right;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.profile {
+.profile, .a-btn-group {
   height: 55px;
-  margin-right: 6px;
+  margin-right: 16px;
   border-radius: 30px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
@@ -61,7 +151,7 @@ header {
 .profile-group {
   cursor: pointer;
   width: 125px; 
-  margin-right: 20px;
+  padding-right: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -116,21 +206,22 @@ nav {
   flex-direction: column;
   overflow: scroll;
   overflow-x: hidden;
-  height: 54.6vh;
+  height: 53vh;
 }
 
 .client-card, .client-add-card, .message-card {
   position: relative;
   display: flex;
   background-color: #fff;
-  min-height: 210px;
+  min-height: 190px;
   width: 800px;
   -webkit-box-sizing: border-box; 
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 36px 34px ;
+  padding: 38px 34px ;
   margin-bottom: 26px;
   box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
 }
 
 .client-add-card {
@@ -159,10 +250,12 @@ nav {
 
 .client-add-form-group1 {
   margin-left: 14px;
+  max-height: 167px;
 }
 
 .client-add-form-group2 {
   margin-left: 50px;
+  max-height: 167px;
 }
 
 .label-total {
@@ -186,6 +279,7 @@ nav {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  height: 110px;
 }
 
 .client-display-group1 {
@@ -210,13 +304,13 @@ nav {
 .add-btn, .delete-btn, .edit-btn {
   font-size: 16.5px;
   position: absolute;
-  padding: 6px 30px;
-  bottom: 17px;
-  right: 17px;
+  padding: 3px 30px;
+  bottom: 22px;
+  right: 22px;
 }
 
 .edit-btn {
-  right: 150px;
+  right: 155px;
 }
 
 .selected {
