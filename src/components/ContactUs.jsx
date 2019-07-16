@@ -59,11 +59,15 @@ export default class ContactUs extends Component {
           <div className='contact-title'>Contact Us</div>
           <div className='form-group'>
             <div className='name-input-group'>
-              <input name='firstName' placeholder='First name' className='c-input name-input' type="text" onChange={handleInputChange} value={firstName} />
-              <input name='lastName' placeholder='Last name' className='c-input right-input name-input' type="text" onChange={handleInputChange} value={lastName} />
+              <input name='firstName' placeholder='First name'
+                className='c-input name-input' type="text" onChange={handleInputChange} value={firstName} />
+              <input name='lastName' placeholder='Last name'
+                className='c-input right-input name-input' type="text" onChange={handleInputChange} value={lastName} />
             </div>
-            <input name='email' placeholder='Email' className='c-input full-width-input email-input' type="text" onChange={handleInputChange} value={email} />
-            <textarea name='message' placeholder='Type message here...' className='c-input full-width-input message-input' type="text" onChange={handleInputChange} value={message} />
+            <input name='email' placeholder='Email'
+              className='c-input full-width-input email-input' type="text" onChange={handleInputChange} value={email} />
+            <textarea name='message' placeholder='Type message here...' 
+              className='c-input full-width-input message-input' type="text" onChange={handleInputChange} value={message} />
             <div className='message-wrapper'>
               <input className='c-submit' value='Submit' type="submit" />
             </div>
