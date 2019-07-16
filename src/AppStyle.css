@@ -206,7 +206,7 @@ nav {
   flex-direction: column;
   overflow: scroll;
   overflow-x: hidden;
-  height: 53vh;
+  height: 54.8vh;
 }
 
 .client-card, .client-add-card, .message-card {
@@ -226,6 +226,7 @@ nav {
 
 .client-add-card {
   margin-bottom: 40px;
+  max-height: ;
 }
 
 .value-key {
@@ -237,7 +238,7 @@ nav {
 }
 
 .input-section {
-  padding: 6px;
+  padding: 3px;
   margin-left: 4px; 
   width: 220px;
 }
@@ -246,16 +247,15 @@ nav {
   display: flex;
   flex-direction: column;
   text-align: right;
+  max-height: 150px;
 }
 
 .client-add-form-group1 {
   margin-left: 14px;
-  max-height: 167px;
 }
 
 .client-add-form-group2 {
   margin-left: 50px;
-  max-height: 167px;
 }
 
 .label-total {
@@ -321,7 +321,7 @@ nav {
 .message-card-group {
   overflow: scroll;
   overflow-x: hidden;
-  height: 82.5vh;
+  height: 82.1vh;
   width: 820px;
 }
 
