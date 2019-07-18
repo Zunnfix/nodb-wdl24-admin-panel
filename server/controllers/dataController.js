@@ -79,12 +79,17 @@ const addMessage = (req, res) => {
   res.json(messages)
 }
 
-// app.put()
+const updateName = (req, res) => {
+  const { firstName, lastName } = req.body
+  clients.splice({ firstName, lastName })
+  res.json(clients)
+}
 
 module.exports = {
   getClients,
   addClient,
   deleteClient,
+  updateName,
   getEmployees,
   addEmployee,
   deleteEmployee,
