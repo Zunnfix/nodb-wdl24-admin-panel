@@ -226,7 +226,6 @@ nav {
 
 .client-add-card {
   margin-bottom: 40px;
-  max-height: ;
 }
 
 .value-key {
@@ -272,7 +271,8 @@ nav {
 }
 
 .client-card-group {
-  display: flex; 
+  display: flex;
+  flex-direction: column;
 }
 
 .client-display-group1, .client-display-group2 {

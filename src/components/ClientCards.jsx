@@ -43,7 +43,7 @@ export default class ClientCards extends Component {
 
   editEmail = (id) => {
     const { updateEmail } = this.state
-    console.log(updateEmail)
+    // console.log(updateEmail)
     axios.put(`api/clients/${id}`, { updateEmail })
       .then(res => this.setState({ clients: res.data }))
       .catch(error => console.log(error))
