@@ -42,6 +42,7 @@ const addMessage = (req, res) => {
   res.json(messages)
 }
 
+<<<<<<< HEAD
 const deleteMessages = (req, res) => {
   const { id } = req.params
   let index = messages.findIndex(messages => {
@@ -54,6 +55,19 @@ const deleteMessages = (req, res) => {
 }
 
 module.exports = {
+=======
+const updateName = (req, res) => {
+  const { firstName, lastName } = req.body
+  clients.splice({ firstName, lastName })
+  res.json(clients)
+}
+
+module.exports = {
+  getClients,
+  addClient,
+  deleteClient,
+  updateName,
+>>>>>>> 2c4e0ceaa1f85d80c7860f66aaf7a5e995e482a3
   getEmployees,
   addEmployee,
   deleteEmployee,

@@ -18,6 +18,10 @@ app.post("/api/employees/", dataController.addEmployee)
 app.get("/api/messages/", dataController.getMessages)
 app.delete("/api/messages/:id", dataController.deleteMessages)
 app.post("/api/messages/", dataController.addMessage)
+<<<<<<< HEAD
+=======
+app.put("/api/clients/:id", dataController.updateName)
+>>>>>>> 2c4e0ceaa1f85d80c7860f66aaf7a5e995e482a3
 
 const PORT = 4242;
 app.listen(PORT, () => console.log(`Listening on ${PORT}`))
