@@ -26,5 +26,3 @@ const ClientCardGroup = (props) => {
 }
 
 export default ClientCardGroup
-
-// * The ghost server that objects are temporarily saved to until nodemon is restarted
