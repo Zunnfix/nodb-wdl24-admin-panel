@@ -8,11 +8,12 @@ export default class EmployeeCards extends Component {
     this.state = {
       employees: [],
       error: 'There was an error!',
+      edit: false,
       firstName: '',
       lastName: '',
       email: '',
       location: '',
-      jobTitle: ''
+      jobTitle: '',
     };
     this.handleInputChange = this.handleInputChange.bind(this);
   }

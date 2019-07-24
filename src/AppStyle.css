@@ -271,7 +271,8 @@ nav {
 }
 
 .client-card-group {
-  display: flex; 
+  display: flex;
+  flex-direction: column;
 }
 
 .client-display-group1, .client-display-group2 {

@@ -7,12 +7,15 @@ export default class ClientCards extends Component {
     super();
     this.state = {
       clients: [],
-      error: '',
+      error: 'There was an error!',
+      edit: false,
+      editTitle: false,
+      updateEmail: '',
       firstName: '',
       lastName: '',
       email: '',
       business: '',
-      title: ''
+      title: '',
     };
     this.handleInputChange = this.handleInputChange.bind(this);
   }
@@ -36,6 +39,18 @@ export default class ClientCards extends Component {
     axios.post("api/clients/")
       .then(res => this.setState({ clients: res.data }))
       .catch(error => console.log(error))
+  }
+
+  editEmail = (id) => {
+    const { updateEmail } = this.state
+    // console.log(updateEmail)
+    axios.put(`api/clients/${id}`, { updateEmail })
+      .then(res => this.setState({ clients: res.data }))
+      .catch(error => console.log(error))
+  }
+
+  toggleEdit = (id) => {
+    this.state.edit === false ? this.setState({edit: true}) : this.setState({edit: false});
   }
 
   onSubmit = (e) => {
@@ -63,11 +78,11 @@ export default class ClientCards extends Component {
     const { name, value } = e.target
 
     this.setState({ [name]: value });
-    // console.log(value);
+    console.log(value);
   }
 
   render() {
-    const { firstName, lastName, email, business, title, clients } = this.state
+    const { id, firstName, lastName, email, business, title, clients, edit } = this.state
     const { handleInputChange } = this
     return (
       <div className='all-cards'>
@@ -99,9 +114,17 @@ export default class ClientCards extends Component {
         </div>
         <div className='card-group'>
           <div className='client-card-group'>
-            <ClientCardGroup
-              deleteClient={this.deleteClient}
-              clients={clients} />
+            {this.state.clients.map(client => (
+              <ClientCardGroup
+                editEmail={this.editEmail}
+                deleteClient={this.deleteClient}
+                client={client} 
+                toggleEdit={this.toggleEdit}
+                edit={edit}
+                handleInputChange={handleInputChange}
+                key={client.id}
+                />
+            ))}
           </div>
         </div>
       </div>
