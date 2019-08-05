@@ -1,51 +1,39 @@
-import React, { Component } from 'react';
-import ClientCard from './components/ClientCards';
-import EmployeeCard from './components/EmployeeCards';
-import MessageCards from "./components/MessageCards";
+import React from 'react';
+import { HashRouter, NavLink } from "react-router-dom";
 import Header from './components/Header';
+import routes from './routes';
 import './AppStyle.css';
-import ContactUs from './components/ContactUs';
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      view: "clients",
-    };
-    this.changeView = this.changeView.bind(this);
-  }
-
-  changeView(newView) {
-    this.setState({ view: newView });
-  }
-
-  render() {
-    const { view } = this.state;
-    return (
-      <main>
-        <Header />
-        <div className='main-page'>
+export default function App() {
+  return (
+    <div>
+      <Header />
+      <div className='main-page'>
+        <HashRouter>
           <nav>
             <div className='nav-group'>
-              <div onClick={() => { this.setState({ view: "contact" }); }}
-                className={view === 'contact' ? 'nav-link selected' : 'nav-link'}>Home</div>
-              <div onClick={() => { this.setState({ view: "clients" }); }}
-                className={view === 'clients' ? 'nav-link selected' : 'nav-link'}>Clients</div>
-              <div onClick={() => { this.setState({ view: "employees" }); }}
-                className={view === 'employees' ? 'nav-link selected' : 'nav-link'}>Employees</div>
-              <div onClick={() => { this.setState({ view: "messages" }); }}
-                className={view === 'messages' ? 'nav-link selected' : 'nav-link'}>Messages</div>
+              <NavLink to='/dashboard' className='nav-link' activeClassName='selected'>
+                <div><i class="fas fa-tachometer-alt"></i> Dashboard</div>
+              </NavLink>
+              <NavLink to='/clients' className='nav-link' activeClassName='selected'>
+                <div><i class="fas fa-users"></i> Clients</div>
+              </NavLink>
+              <NavLink to='/employees' className='nav-link' activeClassName='selected'>
+                <div><i class="fas fa-address-card"></i> Employees</div>
+              </NavLink>
+              <NavLink to='/messages' className='nav-link' activeClassName='selected'>
+                <div><i class="fas fa-comment-alt"></i> Messages</div>
+              </NavLink>
+              <NavLink to='/contact' className='nav-link' activeClassName='selected'>
+                <div><i class="fas fa-envelope"></i> Contact</div>
+              </NavLink>
             </div>
           </nav>
           <div className='all-card-tags'>
-            {this.state.view === "clients" && <ClientCard data={this.state.clients} changeView={this.changeView} />}
-            {this.state.view === "employees" && <EmployeeCard data={this.state.employees} changeView={this.changeView} />}
-            {this.state.view === "messages" && <MessageCards data={this.state.messages} changeView={this.changeView} />}
-            {this.state.view === "contact" && <ContactUs data={this.state.contact} changeView={this.changeView} />}
+            {routes}
           </div>
-        </div>
-      </main>
-    );
-  }
-
+        </HashRouter>
+      </div>
+    </div>
+  )
 }

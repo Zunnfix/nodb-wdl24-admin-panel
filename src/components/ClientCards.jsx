@@ -82,7 +82,7 @@ export default class ClientCards extends Component {
   }
 
   render() {
-    const { id, firstName, lastName, email, business, title, clients, edit } = this.state
+    const { firstName, lastName, email, business, title, clients, edit } = this.state
     const { handleInputChange } = this
     return (
       <div className='all-cards'>

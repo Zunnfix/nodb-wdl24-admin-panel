@@ -18,11 +18,25 @@ header {
   color: #424242;
   background-color: #fff;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.12);
-  height: 9vh;
+  height: 8vh;
+}
+
+main {
+  padding: 30px 0px;
+  width: 80vw;
+}
+
+.col-xl-3, .col-sm-6, .mb-3 {
+  padding: 0 10px;
+}
+
+.row {
+  margin: 0px;
 }
 
 .fas {
   font-size: 18px;
+  margin-right: 5px;
 }
 
 .dropdown-divider {
@@ -31,13 +45,13 @@ header {
 
 .dropdown-menu {
   margin-top: -0.5rem;
-  transform: translate3d(-397px, 55px, 0px);
+  transform: translate3d(-397px, 68px, 0px);
   padding: 0;
 }
 
-.dropdown-menu.custom-menu {
+.dropdown-menu, .custom-menu {
   margin-top: -0.5rem;
-  transform: translate3d(-397px, 55px, 0px);
+  transform: translate3d(-397px, 68px, 0px);
   padding: 0;
 }
 
@@ -116,7 +130,7 @@ header {
 }
 
 .logo {
-  padding: 23px 32px 27px;
+  padding: 23px 24px 27px;
   font-weight: 400;
   font-size: 1.8em;
   line-height: 12px;
@@ -162,24 +176,42 @@ header {
 }
 
 nav {
-  background-color: #2B333E;
+  background-color: #2b333e;
   min-width: 265px;
-  height: 91vh;
+  height: 92vh;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
 }
 
 .nav-group {
   display: flex;
   flex-direction: column;
-  padding: 32px 35px 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.nav-group > a:hover {
+  color: #d4d4d4;
 }
 
 .nav-link {
   font-size: 18px;
+  width: 100%;
   cursor: pointer;
-  padding: 10px 0;
-  margin-bottom: 30px;
+  padding: 18px 24px;
+  margin-bottom: 0px;
   color: #bebebe;
+  border-bottom: 1px solid #232831;
+}
+
+.nav-link:hover {
+  text-decoration: none;
+  background-color: #303642;
+  background-origin: content-box;
+}
+
+.selected, .selected:hover {
+  color: #d4d4d4;
+  background-color: #272c36;
 }
 
 .main-page {
@@ -199,6 +231,29 @@ nav {
   width: 900px;
   padding: 40px;
   padding-bottom: 0;
+}
+
+.card {
+  min-width: 230px;
+}
+
+.o-hidden {
+  overflow: hidden;
+}
+
+.lrg {
+  font-size: 30px;
+}
+
+.card-body-icon {
+  position: absolute;
+  z-index: 0;
+  top: -1.5rem;
+  right: -1rem;
+  opacity: 0.4;
+  font-size: 5rem;
+  -webkit-transform: rotate(15deg);
+  transform: rotate(15deg);
 }
 
 .card-group {
@@ -313,11 +368,6 @@ nav {
   right: 155px;
 }
 
-.selected {
-  padding-bottom: 9px;
-  border-bottom: 1px solid #bebebe;
-}
-
 .message-card-group {
   overflow: scroll;
   overflow-x: hidden;
@@ -347,6 +397,24 @@ nav {
   resize: vertical;
 }
 
+::-webkit-scrollbar {
+  display: block;
+  width: .7rem;
+}
+        
+::-webkit-scrollbar-track {
+  background: rgba(136, 136, 136, 0.0);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136, 0.2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(136, 136, 136, 0.6);
+}
 .message-delete-btn {
   font-size: 16.5px;
   position: absolute;
@@ -368,6 +436,7 @@ nav {
   min-height: 540px;
   width: 580px;
   border-radius: 5px;
+  box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .contact-title {
